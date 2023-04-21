@@ -20,8 +20,10 @@ const fontSize = {
 } as const
 
 const breakpoint = {
-  sm: '32rem',
-  md: '68rem'
+  sm: '640px', // mobile
+  md: '768px', // tablet
+  lg: '1024px', // laptop
+  xl: '1280px' // desktop
 } as const
 
 export const theme = {
