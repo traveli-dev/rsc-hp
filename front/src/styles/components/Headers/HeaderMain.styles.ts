@@ -14,8 +14,53 @@ to {
 
 export const styles = {
   link: css`
+    position: relative;
     font-size: ${theme.fontSize.md};
     text-decoration: none;
+    @media screen and (prefers-reduced-motion: reduce) {
+      &::after {
+        position: absolute;
+        right: 0px;
+        bottom: -16px;
+        left: 0px;
+        display: block;
+        width: 8px;
+        height: 8px;
+        margin: 0 auto;
+        visibility: hidden;
+        content: '';
+        background-color: ${theme.color.black};
+        border-radius: 10px;
+        opacity: 0;
+        transition: none;
+      }
+    }
+    &::after {
+      position: absolute;
+      right: 0px;
+      bottom: -16px;
+      left: 0px;
+      display: block;
+      width: 8px;
+      height: 8px;
+      margin: 0 auto;
+      visibility: hidden;
+      content: '';
+      background-color: ${theme.color.black};
+      border-radius: 10px;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+  `,
+  focusLink: css`
+    &::after {
+      visibility: visible;
+      opacity: 1;
+      ${mq('lg')} {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
   `,
   logo: css`
     position: absolute;
@@ -67,6 +112,32 @@ export const styles = {
             transition: none;
           }
         }
+        @media screen and (prefers-reduced-motion: reduce) {
+          &,
+          &::before,
+          &::after {
+            position: absolute;
+            display: block;
+            width: 21px;
+            height: 3px;
+            background-color: ${theme.color.black};
+            border-radius: 3px;
+            transition: none;
+          }
+        }
+        @media screen and (prefers-reduced-motion: reduce) {
+          &,
+          &::before,
+          &::after {
+            position: absolute;
+            display: block;
+            width: 21px;
+            height: 3px;
+            background-color: ${theme.color.black};
+            border-radius: 3px;
+            transition: none;
+          }
+        }
         &,
         &::before,
         &::after {
@@ -100,7 +171,6 @@ export const styles = {
               bottom: 0;
               background-color: ${theme.color.white};
               transition: none;
-
               transform: rotate(45deg);
             }
           }
@@ -108,7 +178,6 @@ export const styles = {
             bottom: 0;
             background-color: ${theme.color.white};
             transition: all 0.6s;
-
             transform: rotate(45deg);
           }
           @media screen and (prefers-reduced-motion: reduce) {

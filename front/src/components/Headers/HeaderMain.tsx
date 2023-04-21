@@ -1,10 +1,10 @@
-import { useState } from 'react'
 import Link from 'next/link'
+import { useHeaderMain } from '@/hooks/headers'
 import { styles } from '@/styles/components/Headers/HeaderMain.styles'
 
 export const HeaderMain = () => {
-  const [isActive, setIsActive] = useState<boolean>(false)
-  const toggleBool = () => setIsActive(!isActive)
+  const { isActive, toggleBool, currentPath } = useHeaderMain()
+
   return (
     <header css={[styles.header, isActive && styles.headerActive]}>
       <Link css={[styles.logo, isActive && styles.logoActive]} href="/">
@@ -23,27 +23,48 @@ export const HeaderMain = () => {
       <nav css={[styles.menuContent, isActive && styles.menuContentActive]}>
         <ul>
           <li>
-            <Link css={styles.link} href="about">
+            <Link
+              css={[styles.link, currentPath === '/about' && styles.focusLink]}
+              href="about"
+            >
               ABOUT
             </Link>
           </li>
           <li>
-            <Link css={styles.link} href="service">
+            <Link
+              css={[
+                styles.link,
+                currentPath === '/service' && styles.focusLink
+              ]}
+              href="service"
+            >
               SERVICE
             </Link>
           </li>
           <li>
-            <Link css={styles.link} href="work">
+            <Link
+              css={[styles.link, currentPath === '/work' && styles.focusLink]}
+              href="work"
+            >
               WORK
             </Link>
           </li>
           <li>
-            <Link css={styles.link} href="member">
+            <Link
+              css={[styles.link, currentPath === '/member' && styles.focusLink]}
+              href="member"
+            >
               MEMBER
             </Link>
           </li>
           <li>
-            <Link css={styles.link} href="contact">
+            <Link
+              css={[
+                styles.link,
+                currentPath === '/contact' && styles.focusLink
+              ]}
+              href="contact"
+            >
               CONTACT
             </Link>
           </li>
