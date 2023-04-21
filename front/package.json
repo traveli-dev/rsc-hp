@@ -10,10 +10,10 @@
     "check:eslint": "next lint -d ./ --ignore-path .gitignore --max-warnings=0",
     "check:stylelint": "stylelint --ignore-path .gitignore --max-warnings=0 \"**/*.{ts,tsx}\" && printf '\\033[32m%s\\033[m\n' '✔ No stylelint warnings or errors'",
     "check:type": "tsc --pretty --noEmit",
-    "check:prettier": "prettier --check \"src/**/*.{js,jsx,ts,tsx,mdx}\"",
+    "check:prettier": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
     "fix:eslint": "yarn check:eslint --fix",
     "fix:stylelint": "stylelint --ignore-path .gitignore --max-warnings=0 \"**/*.{ts,tsx}\" --fix",
-    "fix:prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,mdx}\"",
+    "fix:prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "build:next": "next build && next export"
   },
   "dependencies": {
@@ -40,6 +40,9 @@
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jsx-a11y": "6.7.1",
+    "postcss": "^8.4.23",
+    "postcss-styled": "^0.34.0",
+    "postcss-syntax": "^0.36.2",
     "prettier": "2.8.7",
     "stylelint": "15.4.0",
     "stylelint-a11y": "1.2.3",

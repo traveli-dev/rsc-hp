@@ -3527,6 +3527,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-styled@npm:^0.34.0":
+  version: 0.34.0
+  resolution: "postcss-styled@npm:0.34.0"
+  peerDependencies:
+    postcss: ">=5.0.0"
+    postcss-syntax: ">=0.34.0"
+  checksum: 9c6efce9294f24f885dc9a76886e6462512fe23f7aa6863b1e8c1a079d1a0a54d6568d583dd819bfe67c0bf389406c2c6e522fb098b61605dab78b1bad5eca34
+  languageName: node
+  linkType: hard
+
+"postcss-syntax@npm:^0.36.2":
+  version: 0.36.2
+  resolution: "postcss-syntax@npm:0.36.2"
+  peerDependencies:
+    postcss: ">=5.0.0"
+  checksum: 812baee602910903b8b77391583721613951d87dbc8baff140879069ff98423392675c4ddfdf073418f4a699ee5d4dd020914bad07504c62f9f333211bf979b8
+  languageName: node
+  linkType: hard
+
 "postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
@@ -3545,7 +3564,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.21":
+"postcss@npm:^8.4.21, postcss@npm:^8.4.23":
   version: 8.4.23
   resolution: "postcss@npm:8.4.23"
   dependencies:
@@ -3804,6 +3823,9 @@ __metadata:
     modern-css-reset: 1.4.0
     next: 13.3.0
     next-seo: 6.0.0
+    postcss: ^8.4.23
+    postcss-styled: ^0.34.0
+    postcss-syntax: ^0.36.2
     prettier: 2.8.7
     react: 18.2.0
     react-dom: 18.2.0
