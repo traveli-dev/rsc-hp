@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  node:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    container_name: rsc-hp
+    ports:
+      - 3000:3000 # Next.js
+    volumes:
+      - type: bind
+        source: ./front
+        target: /home/app
+      - type: volume
+        source: node_modules
+        target: /home/app/node_modules
+      - type: volume
+        source: build_next
+        target: /home/app/.next
+
+volumes:
+  node_modules:
+  build_next:
