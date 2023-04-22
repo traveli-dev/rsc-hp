@@ -1,5 +1,5 @@
-import { styles } from '@/styles/components/Cards/CardService.styles'
 import Link from 'next/link'
+import { styles } from '@/styles/components/Cards/CardService.styles'
 
 type CardServiceProps = {
   serviceId: string

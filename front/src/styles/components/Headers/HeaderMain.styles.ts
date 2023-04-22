@@ -4,11 +4,13 @@ import { mq } from '@/styles/utils'
 
 const fadeInAnime = keyframes`
 from {
-    transform: translateX(100px);
+  opacity: 0;
+  transform: translateX(100px);
 }
 
 to {
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 `
 
@@ -19,6 +21,9 @@ export const styles = {
     left: 0;
     width: 100%;
     height: 128px;
+    ${mq('sm')} {
+      height: 98px;
+    }
   `,
   headerActive: css`
     min-height: 100vh;
@@ -202,7 +207,7 @@ export const styles = {
       margin: 180px 0;
       visibility: hidden;
       opacity: 0;
-      transition: all 3s;
+      /* transition: all 0.6s; */
       ul {
         flex-direction: column;
         gap: 32px;

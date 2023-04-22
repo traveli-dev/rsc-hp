@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 const Document = () => (
   <Html lang="ja">
     <Head>
-      <link href="/manifest.json" rel="manifest" />
+      {/* <link href="/manifest.json" rel="manifest" /> */}
       <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
       <link
         href="/favicon-32x32.png"

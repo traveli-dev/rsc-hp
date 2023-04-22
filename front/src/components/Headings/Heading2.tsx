@@ -9,6 +9,7 @@ export const Heading2 = ({ title }: Heading2Props) => {
   return (
     <Container bgColor="none">
       <div css={styles.headingWrapper}>
+        <span></span>
         <h2 css={styles.title}>{title}</h2>
       </div>
     </Container>
