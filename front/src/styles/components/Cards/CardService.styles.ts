@@ -8,8 +8,8 @@ export const styles = {
   thumbnail: css`
     width: 300px;
     height: 300px;
-    border-radius: 16px;
     background-color: ${theme.color.black};
+    border-radius: 16px;
   `,
   title: css`
     font-size: 2.4rem;

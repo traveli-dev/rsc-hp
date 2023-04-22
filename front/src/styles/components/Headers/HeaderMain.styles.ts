@@ -121,6 +121,19 @@ export const styles = {
             transition: none;
           }
         }
+        @media screen and (prefers-reduced-motion: reduce) {
+          &,
+          &::before,
+          &::after {
+            position: absolute;
+            display: block;
+            width: 21px;
+            height: 3px;
+            background-color: ${theme.color.black};
+            border-radius: 3px;
+            transition: none;
+          }
+        }
         &,
         &::before,
         &::after {

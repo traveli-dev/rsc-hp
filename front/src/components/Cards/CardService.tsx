@@ -13,14 +13,13 @@ export const CardService = ({
   serviceId,
   title,
   description,
-  url,
   thumbnail
 }: CardServiceProps) => {
   return (
     <Link css={styles.cardWrapper} href={`service/${serviceId}`}>
       <div>
-        {/* next/image */}
-        <div css={styles.thumbnail}></div>
+        {/* TODO:next/imageでthumbnailを表示 */}
+        <div css={styles.thumbnail}>{thumbnail}</div>
         <p css={styles.title}>{title}</p>
         <p>{description}</p>
       </div>
