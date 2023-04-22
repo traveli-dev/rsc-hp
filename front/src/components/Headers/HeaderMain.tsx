@@ -7,10 +7,19 @@ export const HeaderMain = () => {
 
   return (
     <header css={[styles.header, isActive && styles.headerActive]}>
-      <Link css={[styles.logo, isActive && styles.logoActive]} href="/">
+      <Link
+        css={[styles.logo, isActive && styles.logoActive]}
+        href="/"
+        onClick={() => {
+          if (isActive) {
+            toggleBool()
+          }
+        }}
+      >
         LOGO
       </Link>
       <input
+        checked={isActive}
         css={styles.menuBtnChecked}
         id="menuBtnChecked"
         type="checkbox"
@@ -26,6 +35,7 @@ export const HeaderMain = () => {
             <Link
               css={[styles.link, currentPath === '/about' && styles.focusLink]}
               href="about"
+              onClick={toggleBool}
             >
               ABOUT
             </Link>
@@ -37,24 +47,27 @@ export const HeaderMain = () => {
                 currentPath === '/service' && styles.focusLink
               ]}
               href="service"
+              onClick={toggleBool}
             >
               SERVICE
             </Link>
           </li>
           <li>
             <Link
-              css={[styles.link, currentPath === '/work' && styles.focusLink]}
-              href="work"
+              css={[styles.link, currentPath === '/member' && styles.focusLink]}
+              href="member"
+              onClick={toggleBool}
             >
-              WORK
+              MEMBER
             </Link>
           </li>
           <li>
             <Link
-              css={[styles.link, currentPath === '/member' && styles.focusLink]}
-              href="member"
+              css={[styles.link, currentPath === '/news' && styles.focusLink]}
+              href="news"
+              onClick={toggleBool}
             >
-              MEMBER
+              NEWS
             </Link>
           </li>
           <li>
@@ -64,6 +77,7 @@ export const HeaderMain = () => {
                 currentPath === '/contact' && styles.focusLink
               ]}
               href="contact"
+              onClick={toggleBool}
             >
               CONTACT
             </Link>

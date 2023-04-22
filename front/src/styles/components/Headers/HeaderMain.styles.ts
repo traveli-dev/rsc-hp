@@ -2,17 +2,27 @@ import { css, keyframes } from '@emotion/react'
 import { theme } from '@/styles/theme'
 import { mq } from '@/styles/utils'
 
-const fadeUpAnime = keyframes`
+const fadeInAnime = keyframes`
 from {
     transform: translateX(100px);
 }
 
 to {
-    transform: translateY(0);
+    transform: translateX(0);
 }
 `
 
 export const styles = {
+  header: css`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 128px;
+  `,
+  headerActive: css`
+    min-height: 100vh;
+  `,
   link: css`
     position: relative;
     font-size: ${theme.fontSize.md};
@@ -70,20 +80,14 @@ export const styles = {
     font-weight: bold;
     text-decoration: none;
     transition: all 0.6s;
+    ${mq('sm')} {
+      top: 32px;
+      left: 16px;
+    }
   `,
   logoActive: css`
     z-index: 9998;
     color: white;
-  `,
-  header: css`
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 128px;
-  `,
-  headerActive: css`
-    min-height: 100vh;
   `,
   menuBtn: css`
     display: none;
@@ -99,32 +103,6 @@ export const styles = {
       height: 34px;
 
       span {
-        @media screen and (prefers-reduced-motion: reduce) {
-          &,
-          &::before,
-          &::after {
-            position: absolute;
-            display: block;
-            width: 21px;
-            height: 3px;
-            background-color: ${theme.color.black};
-            border-radius: 3px;
-            transition: none;
-          }
-        }
-        @media screen and (prefers-reduced-motion: reduce) {
-          &,
-          &::before,
-          &::after {
-            position: absolute;
-            display: block;
-            width: 21px;
-            height: 3px;
-            background-color: ${theme.color.black};
-            border-radius: 3px;
-            transition: none;
-          }
-        }
         @media screen and (prefers-reduced-motion: reduce) {
           &,
           &::before,
@@ -158,6 +136,10 @@ export const styles = {
           content: '';
         }
       }
+    }
+    ${mq('sm')} {
+      top: 32px;
+      right: 16px;
     }
   `,
   menuBtnChecked: css`
@@ -238,7 +220,7 @@ export const styles = {
       z-index: 9998;
       visibility: visible;
       opacity: 1;
-      animation: ${fadeUpAnime} 1s ease;
+      animation: ${fadeInAnime} 0.8s ease;
     }
   `,
   circleBg: css`

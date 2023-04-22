@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 import { ContainerProps } from '@/components/Containers'
 import { theme } from '@/styles/theme'
+import { mq } from '@/styles/utils'
 
 type ContainerStyleType = Omit<ContainerProps, 'children'>
 type BgColorType = Pick<ContainerStyleType, 'bgColor'>
@@ -18,7 +19,10 @@ export const styles = {
     isCenter
   }: Omit<ContainerProps, 'children'>) => css`
     min-height: ${isFull ? 'calc(100vh - 56px)' : 'auto'};
-    padding: 0 16px;
+    padding: 0 64px;
+    ${mq('sm')} {
+      padding: 0 16px;
+    }
     text-align: ${isCenter ? 'center' : 'start'};
     background-color: ${setBgColor({ bgColor })};
   `
