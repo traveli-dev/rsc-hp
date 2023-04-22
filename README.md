@@ -1,6 +1,6 @@
 # 我らのホームページ 
 
-URL:
+URL: https://rsc-hp.netlify.app/
 
 ## 🔑 Requirements
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
