@@ -22,6 +22,7 @@ export const HeaderMain = () => {
         checked={isActive}
         css={styles.menuBtnChecked}
         id="menuBtnChecked"
+        readOnly
         type="checkbox"
         onClick={toggleBool}
       />
